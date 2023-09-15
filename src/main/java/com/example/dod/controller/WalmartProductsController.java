@@ -24,6 +24,11 @@ public class WalmartProductsController {
 	@Autowired
 	WalmartProductsService walmartProductsService;
 
+	@GetMapping("/test")
+	public String test() {
+		return "Welcome to beckend api of re";
+	}
+
 	@GetMapping("/saveProducts")
 	public String saveAllProducts() throws JsonMappingException, JsonProcessingException {
 		this.walmartProductsService.fetchDataAndSave();
