@@ -3,6 +3,7 @@ package com.example.dod.service.impl;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -54,6 +55,8 @@ public class WalmartCatalogsServiceImpl implements WalmartCatalogsService {
 		Walmart walmart = objectMapper.readValue(responseBody, Walmart.class);
 		int pages = Integer.parseInt(walmart.getNumberOfPages());
 		List<WalmartCatalogs> catalogs = walmart.getCatalogs();
+
+		
 		this.walmartCatalogsRepo.saveAll(catalogs);
 		if(pages>1) {
 		for(int i=2;i<=pages;i++) {

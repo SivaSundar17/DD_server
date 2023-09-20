@@ -103,7 +103,7 @@ public class WalmartProductsServiceImpl implements WalmartProductsService {
 
 	@Override
 	public List<WalmartProducts> getDiscountProducts() {
-		return this.walmartProductsRepo.finadDiscountProducts();
+		return this.walmartProductsRepo.findDiscountProducts();
 	}
 	
 	@Override

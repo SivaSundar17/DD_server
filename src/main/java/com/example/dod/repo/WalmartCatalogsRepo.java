@@ -6,4 +6,5 @@ import com.example.dod.model.WalmartCatalogs;
 @Repository
 public interface WalmartCatalogsRepo extends JpaRepository<WalmartCatalogs, Long> {
 
+	public WalmartCatalogs findById(String id);
 }
